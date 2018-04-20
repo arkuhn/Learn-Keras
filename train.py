@@ -8,7 +8,7 @@ from keras import backend as K
 #Data params
 img_width, img_height = 320, 240
 train_data_dir = 'data/TRAIN'
-validation_data_dir = 'data/TEST'
+test_data_dir = 'data/TEST'
 classes = ['EOSINOPHIL', 'LYMPHOCYTE', 'MONOCYTE', 'NEUTROPHIL']
 
 
@@ -24,15 +24,15 @@ else:
 
 #Model
 model = Sequential()
-model.add(Conv2D(32, (3, 3), input_shape=input_shape))
+model.add(Conv2D(32, (3, 3), input_shape=(img_width, img_height, 3)))
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2,2)))
 
-model.add(Conv2D(32, (3, 3), input_shape=input_shape))
+model.add(Conv2D(32, (3, 3)))
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2,2)))
 
-model.add(Conv2D(64, (3, 3), input_shape=input_shape))
+model.add(Conv2D(64, (3, 3)))
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2,2)))
 
@@ -43,7 +43,7 @@ model.add(Dropout(0.5))
 model.add(Dense(1))
 model.add(Activation('sigmoid'))
 
-model.compile(loss='binary_crossentrpy',
+model.compile(loss='binary_crossentropy',
             optimizer='rmsprop',
             metrics=['accuracy'])
 
