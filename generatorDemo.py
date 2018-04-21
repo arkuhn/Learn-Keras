@@ -2,16 +2,12 @@ from keras.preprocessing.image import ImageDataGenerator, array_to_img, img_to_a
 
 
 image_augmentor = ImageDataGenerator (
-    rotation_range=40,
-    width_shift_range=0.2,
-    height_shift_range=0.2,
-    shear_range=0.2,
-    zoom_range=0.2,
+    rescale=1./255,
     horizontal_flip=True,
     fill_mode='nearest'
 )
 
-base_image = load_img('data/preview/source/test.jpg')
+base_image = load_img('data/TEST/NORMAL/IM-0001-0001.jpeg', grayscale=True)
 x = img_to_array(base_image) # (3, 150, 150)
 x = x.reshape((1,) + x.shape) # (1, 3, 150, 150)
 

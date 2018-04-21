@@ -2,10 +2,18 @@ This project is a personal effort to better explore Keras and further understand
 
 At a high level the composed model should take in a chest x-ray and predict (hopefully accurately) whether or not pneumonia is present.
 
+
+
+**Results (WIP):**
+
+-Currently hovering around ~77% accuracy
+
+
+
 The network is built using the following dependencies, dataset and directory structure:
 
 **Dependencies:**
-Python 3.6, Keras, Tensorflow, Pillow, h5py
+Python 3.6, Keras, Tensorflow, Pillow, h5py, scikit-learn
 
 **Data:**
 https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia
@@ -21,6 +29,12 @@ https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia
 ​----/PNEUMONIA
 
 --/TEST
+
+​----/NORMAL
+
+​----/PNEUMONIA
+
+--/VAL
 
 ​----/NORMAL
 

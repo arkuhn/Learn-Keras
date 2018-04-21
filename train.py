@@ -4,31 +4,30 @@ from models import *
 import time
 
 #Data params
-img_width, img_height = 250, 250
+img_width, img_height = 500, 300
 channels = 1
 train_data_dir = 'data/TRAIN'
-test_data_dir = 'data/TEST'
+val_data_dir = 'data/VAL'
 
 #Training params
 epochs = 50
-batch_size = 30
+batch_size = 15
 input_shape = (img_width, img_height, channels)
-
 
 #Model
 model = first_model(input_shape)
 
-
-#Train and test data augmentors
+#Train and val data augmentors
 train_datagen = ImageDataGenerator (
-   horizontal_flip=True,
+    rescale=1./255,
+    fill_mode='nearest'
 )
-test_datagen = ImageDataGenerator(
-   horizontal_flip=True,
+val_datagen = ImageDataGenerator(
+    rescale=1./255,
+    fill_mode='nearest'
 )
 
-
-#Generators from TEST and TRAIN
+#Generators for TRAIN and VAL
 train_generator = train_datagen.flow_from_directory(
     train_data_dir,
     target_size=(img_width, img_height),
@@ -36,8 +35,8 @@ train_generator = train_datagen.flow_from_directory(
     batch_size=batch_size,
     class_mode='binary'
 )
-test_generator = test_datagen.flow_from_directory(
-    test_data_dir,
+val_generator = val_datagen.flow_from_directory(
+    val_data_dir,
     target_size=(img_width, img_height),
     color_mode='grayscale',
     batch_size=batch_size,
@@ -50,7 +49,7 @@ model.fit_generator(
     train_generator,
     steps_per_epoch= 2000 // batch_size,
     epochs=epochs,
-    validation_data=test_generator,
+    validation_data=val_generator,
     validation_steps= 800 // batch_size
 )
 
