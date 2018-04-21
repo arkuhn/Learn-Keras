@@ -1,5 +1,8 @@
-Learning how to build neural network classifiers with Keras.
-Hoping to accomplish OVA and AVA approaches | sigmoid vs softmax
+This project is a personal effort to better explore Keras and further understand building (binary) image classifiers using convolutional neural networks.
+
+At a high level the composed model should take in a chest x-ray and predict (hopefully accurately) whether or not pneumonia is present.
+
+The network is built using the following dependencies, dataset and directory structure:
 
 **Dependencies:**
 Python 3.6, Keras, Tensorflow, Pillow, h5py
@@ -9,16 +12,16 @@ https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia
 
 **Directories:**
 
-./data
+/data
 
-​	/TRAIN
+--/TRAIN
 
-​		/NORMAL
+​----/NORMAL
 
-​		/PNEUMONIA
+​----/PNEUMONIA
 
-​	/TEST
+--/TEST
 
-​		/NORMAL
+​----/NORMAL
 
-​		/PNEUMONIA
+​----/PNEUMONIA
