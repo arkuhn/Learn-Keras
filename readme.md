@@ -6,7 +6,24 @@ At a high level the composed model should take in a chest x-ray and predict (hop
 
 **Results (WIP):**
 
--Currently hovering around ~77% accuracy
+- First model
+
+  - Bad testing, bad data bad everything. Initial attempt.
+  - Accuracy: 65%
+
+- Second model
+
+  - 3 convolution layers, ReLU activiation, maxpooling, binary crossentropy, rmsprop optimizer, output through sigmoid activation
+
+  - Improvements: Test and validation set usage, model saving, statistical analysis through sklearn, greyscale > color (they are x-rays after all), resolution increase
+
+  - Almost 80% accuracy! Not bad!
+
+    ![1524341866831](C:\Users\ak101\Documents\PneumoniaClassifier\img\1524341866831.png)
+
+
+
+
 
 
 

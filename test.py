@@ -45,7 +45,6 @@ predicted_values = model.predict_generator(
     verbose = 1
 )
 predicted_values = [ int(x[0]) for x in predicted_values ]
-print(predicted_values)
 
 scores = model.evaluate_generator(
     test_generator 
