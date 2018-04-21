@@ -3,11 +3,9 @@ from keras import backend as K
 from models import *
 
 #Data params
-img_width, img_height = 320, 240
+img_width, img_height = 500, 300
 train_data_dir = 'data/TRAIN'
 test_data_dir = 'data/TEST'
-classes = ['EOSINOPHIL', 'LYMPHOCYTE', 'MONOCYTE', 'NEUTROPHIL']
-
 
 #Training params
 epochs = 50
@@ -21,10 +19,10 @@ model = first_model(input_shape)
 
 #Train and test data augmentors
 train_datagen = ImageDataGenerator (
-    rescale=1./255
+  rescale=1./255
 )
 test_datagen = ImageDataGenerator(
-    rescale=1./255
+  rescale=1./255
 )
 
 
@@ -50,4 +48,4 @@ model.fit_generator(
     validation_steps= 800 // batch_size
 )
 
-model.save_weights('first_try.h5')
+model.save_weights('first_try2.h5')

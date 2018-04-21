@@ -2,11 +2,6 @@ from keras.models import Sequential
 from keras.layers import Conv2D, MaxPooling2D
 from keras.layers import Activation, Dropout, Flatten, Dense
 
-'''
-Epochs 1-20 ~93% accuracy
-20-50 ~50% accuracy
-binary classifier based on Chollet's blog
-'''
 def first_model(input_shape):
     model = Sequential()
     model.add(Conv2D(32, (3, 3), input_shape=input_shape))
