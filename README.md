@@ -19,7 +19,7 @@ At a high level the composed model should take in a chest x-ray and predict (hop
 
   - Almost 80% accuracy! Not bad!
 
-    ![1524341866831](C:\Users\ak101\Documents\PneumoniaClassifier\img\1524341866831.png)
+    ![1524341866831](./img/1524341866831.png)
 
 
 
